@@ -23,7 +23,7 @@ public class ItemForSale extends Item {
     protected void decreaseQuality() {
         if (quality > 0) {
             quality--;
-    }
+        }
     }
 
     protected void decreaseSellInValue() {
