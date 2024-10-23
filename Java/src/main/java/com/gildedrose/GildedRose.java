@@ -63,7 +63,7 @@ class GildedRose {
     }
 
     private void decreaseSellInValue(int i) {
-        if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (!isSulfuras(i)) {
             items[i].sellIn = items[i].sellIn - 1;
         }
     }
