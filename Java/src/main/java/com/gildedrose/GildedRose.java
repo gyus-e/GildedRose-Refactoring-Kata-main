@@ -26,13 +26,13 @@ class GildedRose {
     private void updateExpiredItem(int i) {
         if (isAgedBrie(i)) {
             increaseQuality(i);
-        } else {
-            if (isBackstagePass(i)) {
-                backstagePassExpired(i);
-            } else {
-                decreaseQuality(i);
-            }
+            return;
+        } 
+        if (isBackstagePass(i)) {
+            backstagePassExpired(i);
+            return;
         }
+        decreaseQuality(i);
     }
 
     private boolean isBackstagePass(int i) {
