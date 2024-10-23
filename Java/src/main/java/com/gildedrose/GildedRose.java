@@ -19,48 +19,35 @@ class GildedRose {
         } else {
             decreaseQuality(i);
         }
-
         decreaseSellInValue(i);
-
-        if (items[i].sellIn < 0) {
+        if (isExpired(i)) {
             updateExpiredItem(i);
         }
-    }
-
-    private void updateExpiredItem(int i) {
-        if (isAgedBrie(i)) {
-            increaseQuality(i);
-            return;
-        } 
-        if (isBackstagePass(i)) {
-            backstagePassExpired(i);
-            return;
-        }
-        decreaseQuality(i);
-    }
-
-    private boolean isBackstagePass(int i) {
-        return items[i].name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
     private boolean isAgedBrie(int i) {
         return items[i].name.equals("Aged Brie");
     }
 
+    private boolean isBackstagePass(int i) {
+        return items[i].name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
     private boolean isSulfuras(int i) {
         return items[i].name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    private void backstagePassExpired(int i) {
-        items[i].quality = 0;
+    private boolean isExpired(int i) {
+        return items[i].sellIn < 0;
     }
+    
+    private void increaseQuality(int i) {
+        if (items[i].quality < 50) {
+            items[i].quality = items[i].quality + 1;
 
-    private void increaseBackstagePassQuality(int i) {
-        if (items[i].sellIn < 11) {
-            increaseQuality(i);
-        }
-        if (items[i].sellIn < 6) {
-            increaseQuality(i);
+            if (isBackstagePass(i)) {
+                increaseBackstagePassQuality(i);
+            }
         }
     }
 
@@ -76,13 +63,28 @@ class GildedRose {
         }
     }
 
-    private void increaseQuality(int i) {
-        if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
-
-            if (isBackstagePass(i)) {
-                increaseBackstagePassQuality(i);
-            }
+    private void updateExpiredItem(int i) {
+        if (isAgedBrie(i)) {
+            increaseQuality(i);
+            return;
+        } 
+        if (isBackstagePass(i)) {
+            backstagePassExpired(i);
+            return;
         }
+        decreaseQuality(i);
+    }
+
+    private void increaseBackstagePassQuality(int i) {
+        if (items[i].sellIn < 11) {
+            increaseQuality(i);
+        }
+        if (items[i].sellIn < 6) {
+            increaseQuality(i);
+        }
+    }
+    
+    private void backstagePassExpired(int i) {
+        items[i].quality = 0;
     }
 }
