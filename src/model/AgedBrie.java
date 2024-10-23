@@ -1,4 +1,4 @@
-package com.gildedrose;
+package model;
 
 public class AgedBrie extends ItemForSale {
 

@@ -1,6 +1,11 @@
-package com.gildedrose;
+package controller;
 
-public class TexttestFixture {
+import model.Item;
+import model.ItemForSale;
+import model.ItemFactory;
+import model.GildedRose;
+
+public class Controller {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 

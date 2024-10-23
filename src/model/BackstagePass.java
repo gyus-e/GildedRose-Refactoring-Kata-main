@@ -1,4 +1,4 @@
-package com.gildedrose;
+package model;
 
 public class BackstagePass extends ItemForSale {
     
