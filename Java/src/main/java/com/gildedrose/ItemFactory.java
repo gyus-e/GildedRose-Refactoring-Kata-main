@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class ItemFactory {
     
-    public static Item getItem (String name, int sellIn, int quality) {
+    public static ItemForSale getItemForSale (String name, int sellIn, int quality) {
         if (name.equals("Aged Brie")) {
             return new AgedBrie(name, sellIn, quality);
         }
