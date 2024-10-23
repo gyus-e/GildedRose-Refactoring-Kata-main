@@ -39,6 +39,10 @@ class GildedRose {
         return items[i].name.equals("Aged Brie");
     }
 
+    private boolean isSulfuras(int i) {
+        return items[i].name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
     private void backstagePassExpired(int i) {
         items[i].quality = 0;
     }
@@ -53,10 +57,8 @@ class GildedRose {
     }
 
     private void decreaseQuality(int i) {
-        if (items[i].quality > 0) {
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+        if (items[i].quality > 0 && !isSulfuras(i)) {
                 items[i].quality = items[i].quality - 1;
-            }
         }
     }
 
