@@ -18,15 +18,19 @@ class GildedRose {
             decreaseSellInValue(i);
 
             if (items[i].sellIn < 0) {
-                if (!isAgedBrie(i)) {
-                    if (!isBackstagePass(i)) {
-                        decreaseQuality(i);
-                    } else {
-                        backstagePassExpired(i);
-                    }
-                } else {
-                    increaseQuality(i);
-                }
+                updateExpiredItem(i);
+            }
+        }
+    }
+
+    private void updateExpiredItem(int i) {
+        if (isAgedBrie(i)) {
+            increaseQuality(i);
+        } else {
+            if (isBackstagePass(i)) {
+                backstagePassExpired(i);
+            } else {
+                decreaseQuality(i);
             }
         }
     }
