@@ -9,7 +9,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
+            if (!isAgedBrie(i)
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 decreaseQuality(i);
             } else {
@@ -19,7 +19,7 @@ class GildedRose {
             decreaseSellInValue(i);
 
             if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
+                if (!isAgedBrie(i)) {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         decreaseQuality(i);
                     } else {
@@ -30,6 +30,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private boolean isAgedBrie(int i) {
+        return items[i].name.equals("Aged Brie");
     }
 
     private void agedBrieExpired(int i) {
