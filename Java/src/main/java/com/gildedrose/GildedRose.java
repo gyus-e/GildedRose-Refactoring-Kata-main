@@ -23,13 +23,17 @@ class GildedRose {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         decreaseQuality(i);
                     } else {
-                        items[i].quality = items[i].quality - items[i].quality;
+                        agedBrieExpired(i);
                     }
                 } else {
                     increaseQuality(i);
                 }
             }
         }
+    }
+
+    private void agedBrieExpired(int i) {
+        items[i].quality = 0;
     }
 
     private void increaseBackstagePassQuality(int i) {
