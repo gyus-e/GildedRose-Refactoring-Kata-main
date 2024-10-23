@@ -14,10 +14,10 @@ public class BackstagePass extends ItemForSale {
         }
         else {
             increaseQuality();
-            if (sellIn <= 10) {
+            if (sellIn < 10) {
                 increaseQuality();
             }
-            if (sellIn <= 5) {
+            if (sellIn < 5) {
                 increaseQuality();
             }
         }
