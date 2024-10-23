@@ -12,6 +12,9 @@ public class ItemFactory {
         if (name.equals("Sulfuras, Hand of Ragnaros")) {
             return new Sulfuras(name, sellIn, quality);
         }
+        if (name.equals("Conjured Mana Cake")) {
+            return new ConjuredItem(name, sellIn, quality);
+        }
         return new ItemForSale(name, sellIn, quality);
     }
 }
