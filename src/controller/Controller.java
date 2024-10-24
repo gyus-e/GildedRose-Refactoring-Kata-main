@@ -1,8 +1,6 @@
 package controller;
 
 import model.Item;
-import model.ItemForSale;
-import model.ItemFactory;
 import model.GildedRose;
 
 public class Controller {
