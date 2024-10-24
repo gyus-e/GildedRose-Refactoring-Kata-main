@@ -2,7 +2,7 @@ package model;
 
 public class GildedRose {
     Item[] items;
-	ItemForSale[] itemsForSale;
+    ItemForSale[] itemsForSale;
 
     public GildedRose(Item[] items) {
     	this.items=items;
