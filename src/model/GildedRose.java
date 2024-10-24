@@ -1,19 +1,23 @@
 package model;
 
-import java.util.ArrayList;
-
 public class GildedRose {
-    ArrayList<ItemForSale> itemsForSale = new ArrayList<ItemForSale>();
+    Item[] items;
+	ItemForSale[] itemsForSale;
 
     public GildedRose(Item[] items) {
-        for (Item i : items) {
-            itemsForSale.add(ItemFactory.getItemForSale(i.name, i.sellIn, i.quality));
+    	this.items=items;
+    	this.itemsForSale=new ItemForSale[items.length];
+    	
+        for (int i = 0; i < items.length; i++) {
+            itemsForSale[i]=(ItemFactory.getItemForSale(items[i].name, items[i].sellIn, items[i].quality));
         }
     }
 
     public void updateQuality() {
-        for (ItemForSale i : itemsForSale) {
-            i.updateQuality();
+        for (int i = 0; i < itemsForSale.length; i++) {
+            itemsForSale[i].updateQuality();
+            items[i].sellIn=itemsForSale[i].sellIn;
+            items[i].quality=itemsForSale[i].quality;
         }
     }
 }
