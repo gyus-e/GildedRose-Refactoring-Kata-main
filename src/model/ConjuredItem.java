@@ -1,8 +1,8 @@
 package model;
 
-public class ConjuredItem extends ItemForSale {
+class ConjuredItem extends ItemForSale {
 
-    public ConjuredItem(String name, int sellIn, int quality) {
+    ConjuredItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 

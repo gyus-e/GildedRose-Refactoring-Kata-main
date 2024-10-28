@@ -1,12 +1,12 @@
 package model;
 
-public class ItemForSale extends Item {
+class ItemForSale extends Item {
     
-    public ItemForSale(String name, int sellIn, int quality) {
+    ItemForSale(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
     
-    public void updateQuality() {
+    void updateQuality() {
         decreaseSellInValue();
         decreaseQuality();
         if (isExpired()) {

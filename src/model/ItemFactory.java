@@ -1,8 +1,8 @@
 package model;
 
-public class ItemFactory {
+class ItemFactory {
     
-    public static ItemForSale getItemForSale (String name, int sellIn, int quality) {
+    static ItemForSale getItemForSale (String name, int sellIn, int quality) {
         if (name.equals("Aged Brie")) {
             return new AgedBrie(name, sellIn, quality);
         }

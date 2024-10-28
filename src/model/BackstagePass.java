@@ -1,13 +1,12 @@
 package model;
 
-public class BackstagePass extends ItemForSale {
+class BackstagePass extends ItemForSale {
     
-    public BackstagePass(String name, int sellIn, int quality) {
+    BackstagePass(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
     
-    @Override
-    public void updateQuality() {
+    @Override void updateQuality() {
         decreaseSellInValue();
         if (isExpired()) {
             quality=0;
