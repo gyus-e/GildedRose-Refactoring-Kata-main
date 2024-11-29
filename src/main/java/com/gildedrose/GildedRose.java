@@ -72,13 +72,27 @@ public class GildedRose {
     }
 
     /**
-     * Remove item from inventory and database
+     * Remove item with known id from inventory and database
      *
      * @param item
      */
     public void removeItem(ItemForSale item) {
         inventory.remove(item); //runtime exception
         db.removeItem(item);
+    }
+
+    /**
+     * Remove item from inventory and database without knowing its id.
+     * Extremely slow.
+     *
+     * @param item
+     */
+    public void removeItem(Item item) {
+        for (ItemForSale inventoryItem : inventory) {
+            if (inventoryItem.name.equals(item.name) && inventoryItem.sellIn == item.sellIn && inventoryItem.quality == item.quality) {
+                removeItem(inventoryItem);
+            }
+        }
     }
 
     /**
