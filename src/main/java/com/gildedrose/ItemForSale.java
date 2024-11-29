@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class ItemForSale extends Item {
 
-    private String id;
+    private final String id;
 
     public ItemForSale(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
