@@ -26,6 +26,10 @@ public class Controller {
         app.addItem(item);
     }
 
+    public static void removeItem(Item item) {
+        app.removeItem(item);
+    }
+
     public static void updateQuality() {
         app.updateQuality();
     }
