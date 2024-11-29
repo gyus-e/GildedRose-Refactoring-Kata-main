@@ -2,31 +2,19 @@ package com.controller;
 
 import com.gildedrose.GildedRose;
 import com.gildedrose.Item;
+import java.util.Scanner;
 
 public class Controller {
+    private static int i = 1;
+    private static final GildedRose app = new GildedRose();
+
     public static void main(String[] args) {
-        GildedRose app = new GildedRose();
-
-        app.clearInventory();
-        initializeInventory(app);
-
-        int days = 2;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
-
-        test(app, days);
+        initializeInventory();
+        test();
     }
 
-    private static void test(GildedRose app, int days) {
-        for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            printInventory(app);
-            app.updateQuality();
-        }
-    }
-
-    private static void printInventory(GildedRose app) {
+    public static void printInventory() {
+        System.out.println("-------- day " + i++ + " --------");
         System.out.println("name, sellIn, quality");
         for (Item item : app.getInventory()) {
             System.out.println(item);
@@ -34,9 +22,26 @@ public class Controller {
         System.out.println();
     }
 
-    private static void initializeInventory(GildedRose app) {
+    public static void addItem(Item item) {
+        app.addItem(item);
+    }
+
+    public static void updateQuality() {
+        app.updateQuality();
+    }
+
+    private static void test() {
+        Scanner scanner = new Scanner(System.in);
+        do{
+            updateQuality();
+            printInventory();
+        } while (scanner.nextLine().isEmpty());
+    }
+
+    private static void initializeInventory() {
+        app.clearInventory();
         for (Item item : generateItems()) {
-            app.addItem(item);
+            addItem(item);
         }
     }
 
