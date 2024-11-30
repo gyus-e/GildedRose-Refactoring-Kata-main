@@ -49,15 +49,6 @@ public class GildedRose {
         return inventory;
     }
 
-//    public ArrayList<String> getInventoryStringList() {
-//        ArrayList<String> inventoryStringList = new ArrayList<String>();
-//        inventoryStringList.add("name, sellIn, quality");
-//        for (ItemForSale i : inventory) {
-//            inventoryStringList.add(i.toString());
-//        }
-//        return inventoryStringList;
-//    }
-
     /**
      * Creates item with specified parameters and adds it to inventory and database
      *
