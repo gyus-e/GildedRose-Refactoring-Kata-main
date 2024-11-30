@@ -2,16 +2,19 @@ package com.controller;
 
 import com.gildedrose.GildedRose;
 import com.gildedrose.Item;
+import com.gildedrose.ItemForSale;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller {
     private static int i = 1;
     private static final GildedRose app = new GildedRose();
 
-    public static void main(String[] args) {
-        initializeInventory();
-        test();
-    }
+//    public static void main(String[] args) {
+//        initializeInventory();
+//        test();
+//    }
 
     public static void printInventory() {
         System.out.println("-------- day " + i++ + " --------");
@@ -20,6 +23,15 @@ public class Controller {
             System.out.println(item);
         }
         System.out.println();
+    }
+
+    public static ArrayList<String> getInventoryStringList() {
+        ArrayList<String> inventoryStringList = new ArrayList<String>();
+        inventoryStringList.add("name, sellIn, quality");
+        for (ItemForSale i : app.getInventory()) {
+            inventoryStringList.add(i.toString());
+        }
+        return inventoryStringList;
     }
 
     public static void addItem(Item item) {
@@ -42,7 +54,7 @@ public class Controller {
         } while (scanner.nextLine().isEmpty());
     }
 
-    private static void initializeInventory() {
+    public static void initializeInventory() {
         app.clearInventory();
         for (Item item : generateItems()) {
             addItem(item);
