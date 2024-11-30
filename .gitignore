@@ -11,4 +11,3 @@ bin/
 .gradle
 /build/
 
-src/main/java/GildedRose.sqlite
