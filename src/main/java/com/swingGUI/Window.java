@@ -1,4 +1,4 @@
-package com.gui;
+package com.swingGUI;
 
 import com.controller.Controller;
 
@@ -11,7 +11,7 @@ public class Window {
     private static JPanel inventoryPanel;
     private static JPanel buttonPanel;
     private static JScrollPane inventoryScrollPane;
-    private static JList<String> displayList;
+    private static JList<String> inventoryDisplayList;
 
     public static void main(String[] args) {
         Controller.initializeInventory();
@@ -46,8 +46,8 @@ public class Window {
         JPanel inventoryPanel = new JPanel();
         inventoryPanel.setLayout(new BoxLayout(inventoryPanel, BoxLayout.Y_AXIS));
 
-        displayList = new JList<String>(Controller.getInventoryStringList().toArray(new String[0]));
-        inventoryScrollPane = new JScrollPane(displayList);
+        inventoryDisplayList = new JList<String>(Controller.getInventoryStringList().toArray(new String[0]));
+        inventoryScrollPane = new JScrollPane(inventoryDisplayList);
 
         inventoryPanel.add(inventoryScrollPane);
         return inventoryPanel;
@@ -65,7 +65,7 @@ public class Window {
         JButton updateButton = new JButton("Update");
         updateButton.addActionListener(e -> {
             Controller.updateQuality();
-            displayList.setListData(Controller.getInventoryStringList().toArray(new String[0]));
+            inventoryDisplayList.setListData(Controller.getInventoryStringList().toArray(new String[0]));
         });
         return updateButton;
     }
