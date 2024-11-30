@@ -46,19 +46,19 @@ public class Controller {
         app.updateQuality();
     }
 
+    public static void initializeInventory() {
+        app.clearInventory();
+        for (Item item : generateItems()) {
+            addItem(item);
+        }
+    }
+
     private static void test() {
         Scanner scanner = new Scanner(System.in);
         do{
             updateQuality();
             printInventory();
         } while (scanner.nextLine().isEmpty());
-    }
-
-    public static void initializeInventory() {
-        app.clearInventory();
-        for (Item item : generateItems()) {
-            addItem(item);
-        }
     }
 
     private static Item[] generateItems() {
