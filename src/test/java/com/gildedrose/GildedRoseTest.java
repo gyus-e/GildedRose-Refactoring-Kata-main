@@ -26,6 +26,6 @@ class GildedRoseTest {
     void addItem() {
         GildedRose app = new GildedRose();
         app.addItem(new Item("Conjured Mana Cake", 0, 20));
-        assertTrue(app.getInventory().get(app.getInventory().size() - 1).name.equals("Conjured Mana Cake"));
+        assertEquals("Conjured Mana Cake", app.getInventory().get(app.getInventory().size() - 1).name);
     }
 }
