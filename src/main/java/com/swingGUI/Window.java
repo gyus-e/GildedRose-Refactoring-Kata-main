@@ -56,9 +56,14 @@ public class Window {
     private JPanel getButtonPanel() {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
-
-        buttonPanel.add(getUpdateButton());
+        buttonPanel.add(getUpdateButtonPanel());
         return buttonPanel;
+    }
+
+    private JPanel getUpdateButtonPanel() {
+        JPanel updateButtonPanel = new JPanel();
+        updateButtonPanel.add(getUpdateButton());
+        return updateButtonPanel;
     }
 
     private JButton getUpdateButton() {
