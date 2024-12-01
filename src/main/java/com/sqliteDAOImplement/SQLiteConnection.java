@@ -7,7 +7,7 @@ import com.dao.DatabaseConnection;
 
 public final class SQLiteConnection extends DatabaseConnection {
     public SQLiteConnection() {
-        String url = "jdbc:sqlite:src/main/java/GildedRose.sqlite";
+        String url = "jdbc:sqlite:src/main/database/gildedRose.sqlite";
         try {
             connection = DriverManager.getConnection(url);
         } catch (SQLException e) {

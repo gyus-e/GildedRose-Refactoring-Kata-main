@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GildedRose.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+    <script-file value="$PROJECT_DIR$/src/main/sql/GildedRose.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="eb48cfd3-2523-4857-9e84-10a2e37b6ccf" />
+    <method v="2" />
+  </configuration>
+</component>
